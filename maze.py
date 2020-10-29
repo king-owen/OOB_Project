@@ -20,11 +20,16 @@ class Maze:
             found = True
             while found:
                 line = random.choice(self.content)
-                spot = random.choice(line)
-                if spot == " ":
+                spot = random.randrange(0,len(line))
+
+                if line[spot] == " ":
                     found = False
-            location = (line, spot)
+                    x = self.content.index(line)
+                    y = spot
+
+            location = (x,y)
             print(location)
+
 
 maze1 = Maze("7X7 Maze.txt")
 
