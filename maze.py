@@ -1,11 +1,14 @@
-import csv, random
 
+import csv, random
+from player import Player
 class Maze:
 
     def __init__(self,filename):
         with open(filename, 'r') as inputfile:
             content = list(csv.reader(inputfile))
         self.content = content
+        self.player = Player()
+        self.location = [(x, y.index("P")) for x, y in enumerate(self.content) if "P" in y]
 
         i = 0
         while i < 4:
@@ -65,6 +68,8 @@ class Maze:
 maze1 = Maze("7X7 Maze.txt")
 
 maze1.display()
+
+print(maze1.location)
 
 print(maze1.can_move_to(0, 1))
 
