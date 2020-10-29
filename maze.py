@@ -54,6 +54,7 @@ class Maze:
 
     def is_exit(self, line, column):
         if self.content[line][column] == "E":
+            winner = 'winner'
             return True
         else:
             return False
