@@ -9,7 +9,7 @@ class Maze:
         def check(self, line, column):
             if self.content[line][column] == " ":
                 return True
-            else:
+            elif self.content[line][column] == "x":
                 return False
 
         def display(self):
@@ -29,6 +29,9 @@ class Maze:
 
             location = (x,y)
             print(location)
+                
+        def is_item(self):
+                pass
 
 
 maze1 = Maze("7X7 Maze.txt")
