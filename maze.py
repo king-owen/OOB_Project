@@ -8,7 +8,7 @@ class Maze:
             content = list(csv.reader(inputfile))
         self.content = content
         self.player = Player()
-        self.location = [(x, y.index("P")) for x, y in enumerate(self.content) if "P" in y]
+        self.location = [(x, y.index("P")) for x, y in enumerate(self.content) if "P" in y][0]
 
         i = 0
         while i < 4:
@@ -57,10 +57,50 @@ class Maze:
 
     def is_exit(self, line, column):
         if self.content[line][column] == "E":
-            winner = 'winner'
+            # winner = 'winner'
             return True
         else:
             return False
+
+def main():
+    running = True
+
+    while running == True:
+        direction = input("Enter a direction: ")
+
+        if direction == "w":
+           if maze1.can_move_to(maze1.location[0]-1,maze1.location[1]) == True:
+               maze1.location = (maze1.location[0]-1,) + maze1.location[1:]
+               print(maze1.location)
+            
+               
+        
+               
+
+        elif direction == "a":
+            if maze1.can_move_to(maze1.location[0],maze1.location[1]-1) == True:
+                maze1.location = (maze1.location[1]-1,) + maze1.location[2:]
+                print(maze1.location)
+                
+            
+            
+
+        elif direction == "s":
+            if maze1.can_move_to(maze1.location[0]+1,maze1.location[1]) == True:
+                maze1.location = (maze1.location[0]+1,) + maze1.location[1:]
+                print(maze1.location)
+
+        elif direction == "d":
+            if maze1.can_move_to(maze1.location[0],maze1.location[1]+1) ==  True:
+                maze1.location = (maze1.location[1]+1,) + maze1.location[2:]
+                print(maze1.location)
+                
+        
+        if maze1.is_exit(maze1.location[0],maze1.location[1]) == True:
+            running = False
+       
+
+        
 
 
 
@@ -85,3 +125,4 @@ print(maze1.is_item(5, 3))
 
 print(maze1.is_item(5, 4))
 
+main()
