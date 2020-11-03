@@ -54,7 +54,8 @@ class Maze:
 
     def is_item(self, line, column):
         if self.content[line][column] == "i":
-            self.player.backpack = self.player.backpack.append("i")
+            self.player.appendItem("i")
+            print(self.player.backpack)
             return True
         else:
             return False
