@@ -62,10 +62,13 @@ class Maze:
 
     def is_exit(self, line, column):
         if self.content[line][column] == "E":
-            # winner = 'winner'
+            if len(self.player.backpack) == 4:
+                print("You win")
             return True
         else:
             return False
+    
+
 
 def main():
     running = True
