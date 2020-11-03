@@ -27,7 +27,10 @@ class Maze:
 
     def can_move_to(self, line, column):
         if self.content[line][column] != "X":
-            return True
+            if self.is_item(line, column) == True:
+                return True
+            else:
+                return True
         else:
             return False
 
@@ -51,6 +54,7 @@ class Maze:
 
     def is_item(self, line, column):
         if self.content[line][column] == "i":
+            self.player.backpack = self.player.backpack.append("i")
             return True
         else:
             return False
@@ -116,5 +120,7 @@ print(maze1.is_exit(1,4))
 print(maze1.is_item(5, 3))
 
 print(maze1.is_item(5, 4))
+
+print(maze1.player.backpack)
 
 main()
