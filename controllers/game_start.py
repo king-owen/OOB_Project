@@ -10,6 +10,6 @@ class GameStart:
 
     def run(self):
 
-        moving = GameMove(self.maze)
+        start = MazeView(self.maze)
 
-        moving.move()
+        start.display_maze()
