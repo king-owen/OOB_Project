@@ -49,13 +49,13 @@ class GameMove:
                     print("Unsuccessful Move")
             else:
                 print("Invalid Direction")
-            
-        if maze.can_move_to(maze.location[0], maze.location[1]) == True:
-            if maze.is_exit(maze.location[0], maze.location[1]) == False:
-                maze.content[maze.location[0]][maze.location[1]] = "P"
-            else:
-                running = False
-                print("Exit Reached")
+
+            if self.maze.can_move_to(self.maze.location[0], self.maze.location[1]) == True:
+                if self.maze.is_exit(self.maze.location[0], self.maze.location[1]) == False:
+                    self.maze.content[self.maze.location[0]][self.maze.location[1]] = "P"
+                else:
+                    running = False
+                    print("Exit Reached")
 
             if running == True:
                 print(self.maze.location)
