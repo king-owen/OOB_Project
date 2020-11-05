@@ -1,6 +1,6 @@
 
 import csv, random
-from player import Player
+from .player import Player
 class Maze:
 
     def __init__(self,filename):
@@ -56,6 +56,7 @@ class Maze:
         if self.content[line][column] == "i":
             self.player.appendItem("i")
             print(self.player.backpack)
+            self.content[line][column] = " "
             return True
         else:
             return False
@@ -79,22 +80,21 @@ def main():
         if direction == "w":
            if maze1.can_move_to(maze1.location[0]-1,maze1.location[1]) == True:
                maze1.location = (maze1.location[0]-1,) + maze1.location[1:]
-               print(maze1.location)      
 
         elif direction == "a":
             if maze1.can_move_to(maze1.location[0],maze1.location[1]-1) == True:
                 maze1.location = (maze1.location[0], maze1.location[1]-1,)
-                print(maze1.location)
                 
         elif direction == "s":
             if maze1.can_move_to(maze1.location[0]+1,maze1.location[1]) == True:
                 maze1.location = (maze1.location[0]+1,) + maze1.location[1:]
-                print(maze1.location)
 
         elif direction == "d":
             if maze1.can_move_to(maze1.location[0],maze1.location[1]+1) == True:
                 maze1.location = (maze1.location[0], maze1.location[1]+1,) 
-                print(maze1.location)
+        
+        maze1.display()
+        print(maze1.location)
                 
         if maze1.is_exit(maze1.location[0],maze1.location[1]) == True:
             running = False

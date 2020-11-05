@@ -1,7 +1,7 @@
-from maze.py import main, maze 
+from models.maze import main, Maze 
 
 if __name__ == "__main__":
-  maze1 = maze()
+  maze1 = Maze()
   main()
   
   
