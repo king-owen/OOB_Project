@@ -109,29 +109,3 @@ def main(maze):
         if running == True:
             maze.display()
             print(maze.location)
-        
-
-
-
-
-maze1 = Maze("maze.txt")
-
-print(maze1.location)
-
-print(maze1.can_move_to(0, 1))
-
-print(maze1.can_move_to(5, 1))
-
-print(maze1.find_random_spot())
-
-print(maze1.is_exit(1,5))
-
-print(maze1.is_exit(1,4))
-
-print(maze1.is_item(5, 3))
-
-print(maze1.is_item(5, 4))
-
-print(maze1.player.backpack)
-
-main(maze1)
