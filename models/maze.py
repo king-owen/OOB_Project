@@ -65,6 +65,8 @@ class Maze:
         if self.content[line][column] == "E":
             if len(self.player.backpack) == 4:
                 print("You win")
+            else:
+                print("You lose")
             return True
         else:
             return False
