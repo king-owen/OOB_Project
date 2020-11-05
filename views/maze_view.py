@@ -11,9 +11,12 @@ class MazeView:
 
         pygame.init()
 
+        clock = pygame.time.Clock()
+
         running = True
 
         while running:
+            clock.tick(60)
 
             # for i in self.maze.content:
             #     print(i)

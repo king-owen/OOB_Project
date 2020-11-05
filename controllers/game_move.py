@@ -22,43 +22,45 @@ class GameMove:
 
             keys = pygame.key.get_pressed()
 
-            # if (direction == "w") or 
-            if (keys[pygame.locals.K_w]):
-                if self.maze.can_move_to(self.maze.location[0]-1,self.maze.location[1]) == True:
-                    self.maze.content[self.maze.location[0]][self.maze.location[1]] = " "
-                    self.maze.location = (self.maze.location[0]-1,) + self.maze.location[1:]
-                #     print("Successful Move")
-                # else:
-                #     print("Unsuccessful Move")
+            for event in pygame.event.get():
+                if event.type == pygame.KEYDOWN:
+                    # if (direction == "w") or 
+                    if (keys[pygame.locals.K_w]):
+                        if self.maze.can_move_to(self.maze.location[0]-1,self.maze.location[1]) == True:
+                            self.maze.content[self.maze.location[0]][self.maze.location[1]] = " "
+                            self.maze.location = (self.maze.location[0]-1,) + self.maze.location[1:]
+                        #     print("Successful Move")
+                        # else:
+                        #     print("Unsuccessful Move")
 
-            # elif (direction == "a") or 
-            elif (keys[pygame.locals.K_a]):
-                if self.maze.can_move_to(self.maze.location[0],self.maze.location[1]-1) == True:
-                    self.maze.content[self.maze.location[0]][self.maze.location[1]] = " "
-                    self.maze.location = (self.maze.location[0], self.maze.location[1]-1,)
-                #     print("Successful Move")
-                # else:
-                #     print("Unsuccessful Move")
-                    
-            # elif (direction == "s") or 
-            elif (keys[pygame.locals.K_s]):
-                if self.maze.can_move_to(self.maze.location[0]+1,self.maze.location[1]) == True:
-                    self.maze.content[self.maze.location[0]][self.maze.location[1]] = " "
-                    self.maze.location = (self.maze.location[0]+1,) + self.maze.location[1:]
-                #     print("Successful Move")
-                # else:
-                #     print("Unsuccessful Move")
+                    # elif (direction == "a") or 
+                    elif (keys[pygame.locals.K_a]):
+                        if self.maze.can_move_to(self.maze.location[0],self.maze.location[1]-1) == True:
+                            self.maze.content[self.maze.location[0]][self.maze.location[1]] = " "
+                            self.maze.location = (self.maze.location[0], self.maze.location[1]-1,)
+                        #     print("Successful Move")
+                        # else:
+                        #     print("Unsuccessful Move")
+                            
+                    # elif (direction == "s") or 
+                    elif (keys[pygame.locals.K_s]):
+                        if self.maze.can_move_to(self.maze.location[0]+1,self.maze.location[1]) == True:
+                            self.maze.content[self.maze.location[0]][self.maze.location[1]] = " "
+                            self.maze.location = (self.maze.location[0]+1,) + self.maze.location[1:]
+                        #     print("Successful Move")
+                        # else:
+                        #     print("Unsuccessful Move")
 
-            # elif (direction == "d") or 
-            elif (keys[pygame.locals.K_d]):
-                if self.maze.can_move_to(self.maze.location[0],self.maze.location[1]+1) == True:
-                    self.maze.content[self.maze.location[0]][self.maze.location[1]] = " "
-                    self.maze.location = (self.maze.location[0], self.maze.location[1]+1,)
-            #         print("Successful Move")
-            #     else:
-            #         print("Unsuccessful Move")
-            # else:
-            #     print("Invalid Direction")
+                    # elif (direction == "d") or 
+                    elif (keys[pygame.locals.K_d]):
+                        if self.maze.can_move_to(self.maze.location[0],self.maze.location[1]+1) == True:
+                            self.maze.content[self.maze.location[0]][self.maze.location[1]] = " "
+                            self.maze.location = (self.maze.location[0], self.maze.location[1]+1,)
+                    #         print("Successful Move")
+                    #     else:
+                    #         print("Unsuccessful Move")
+                    # else:
+                    #     print("Invalid Direction")
 
             if self.maze.can_move_to(self.maze.location[0], self.maze.location[1]) == True:
                 if self.maze.is_exit(self.maze.location[0], self.maze.location[1]) == False:
@@ -66,6 +68,8 @@ class GameMove:
                 else:
                     running = False
                     print("Exit Reached")
+                    pygame.quit()
+                    quit()
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
