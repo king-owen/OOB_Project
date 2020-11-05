@@ -22,7 +22,7 @@ class Maze:
                     found = False
                     x = self.content.index(line)
                     y = spot
-                    self.content[x][y] = "i"
+                    self.content[x][y] = "key"
                     i += 1
 
     def can_move_to(self, line, column):
@@ -53,8 +53,8 @@ class Maze:
         return(location)
 
     def is_item(self, line, column):
-        if self.content[line][column] == "i":
-            self.player.appendItem("i")
+        if self.content[line][column] == "key":
+            self.player.appendItem("key")
             print("Picked up Item")
             print(self.player.backpack)
 
