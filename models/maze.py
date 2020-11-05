@@ -55,7 +55,9 @@ class Maze:
     def is_item(self, line, column):
         if self.content[line][column] == "i":
             self.player.appendItem("i")
+            print("Picked up Item")
             print(self.player.backpack)
+
             self.content[line][column] = " "
             return True
         else:
@@ -85,29 +87,46 @@ def main(maze):
            if maze.can_move_to(maze.location[0]-1,maze.location[1]) == True:
                maze.content[maze.location[0]][maze.location[1]] = " "
                maze.location = (maze.location[0]-1,) + maze.location[1:]
+               print("Successful Move")
+           else:
+               print("Unsuccessful Move")
 
         elif direction == "a":
             if maze.can_move_to(maze.location[0],maze.location[1]-1) == True:
                 maze.content[maze.location[0]][maze.location[1]] = " "
                 maze.location = (maze.location[0], maze.location[1]-1,)
+                print("Successful Move")
+            else:
+                print("Unsuccessful Move")
                 
         elif direction == "s":
             if maze.can_move_to(maze.location[0]+1,maze.location[1]) == True:
                 maze.content[maze.location[0]][maze.location[1]] = " "
                 maze.location = (maze.location[0]+1,) + maze.location[1:]
+                print("Successful Move")
+            else:
+                print("Unsuccessful Move")
 
         elif direction == "d":
             if maze.can_move_to(maze.location[0],maze.location[1]+1) == True:
                 maze.content[maze.location[0]][maze.location[1]] = " "
-                maze.location = (maze.location[0], maze.location[1]+1,) 
+                maze.location = (maze.location[0], maze.location[1]+1,)
+                print("Successful Move")
+            else:
+                print("Unsuccessful Move")
+        else:
+            print("Invalid Direction")
         
         if maze.can_move_to(maze.location[0], maze.location[1]) == True:
             if maze.is_exit(maze.location[0], maze.location[1]) == False:
-                maze.content[maze.location[0]][maze.location[1]] = "p"
+                maze.content[maze.location[0]][maze.location[1]] = "P"
+
                 
         if maze.is_exit(maze.location[0],maze.location[1]) == True:
+            print("Exit Reached")
             running = False
 
         if running == True:
             maze.display()
             print(maze.location)
+        
