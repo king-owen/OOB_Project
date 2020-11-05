@@ -1,6 +1,7 @@
 
 import csv, random
 from .player import Player
+
 class Maze:
 
     def __init__(self,filename):

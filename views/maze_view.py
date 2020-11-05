@@ -5,4 +5,5 @@ class MazeView:
         self.maze = maze
 
     def display_maze(self):
-        self.maze.display()
+        for i in self.maze.content:
+            print(i)

@@ -1,21 +1,18 @@
 from models.maze import Maze
 from models.player import Player
 from .game_move import GameMove
+from views.maze_view import MazeView
 
 class GameStart:
 
     def __init__(self, maze):
         self.maze = Maze(maze)
-        self.running = True
 
     def run(self):
 
-        self.maze.display()
-
         moving = GameMove(self.maze)
 
-        while self.running == True:
-            moving.move()
+        moving.move()
 
             # direction = input("Enter a direction: ")
 
