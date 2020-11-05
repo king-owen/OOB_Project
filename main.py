@@ -1,7 +1,6 @@
-from models.maze import main, Maze 
+from models.maze import Maze 
+from controllers.game_start import GameStart
 
 if __name__ == "__main__":
-  maze1 = Maze("maze.txt")
-  main(maze1)
-  
-  
+  game = GameStart("maze.txt")
+  game.run()
