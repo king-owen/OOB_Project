@@ -114,7 +114,7 @@ def main(maze):
 
 
 
-maze1 = Maze("7X7 Maze.txt")
+maze1 = Maze("maze.txt")
 
 print(maze1.location)
 
