@@ -1,4 +1,6 @@
 from views.maze_view import MazeView
+import pygame
+import pygame.locals
 
 class GameMove:
 
