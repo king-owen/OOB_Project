@@ -39,5 +39,13 @@ def test_find_random_spot(test_maze):
     plot = test_maze.find_random_spot()
     test_maze.can_move_to(plot[0],plot[1]) == True
 
+def test_exit(test_maze):
+    """Checks to see if Maze has a is_exit attribute and verfiy if the exit is True """
+    assert hasattr(test_maze,"is_exit")
+    test_maze.location = [(x, y.index("E")) for x, y in enumerate(test_maze.content) if "E" in y][0]
+    assert test_maze.is_exit(test_maze.location[0],test_maze.location[1]) == True
+
+
+
 
 
