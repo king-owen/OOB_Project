@@ -1,27 +1,32 @@
 import pytest
-from maze import Maze
+from models.maze import Maze
+from models.player import Player
 
-def test_content(Maze):
-    assert hasattr(Maze,'content')
+@pytest.fixture
+def test_maze():
+    return Maze("maze.txt")
 
-def test_player(Maze):
-    assert hasattr(Maze,'player')
+def test_content(test_maze):
+    assert hasattr(test_maze,'content')
 
-def test_location(Maze):
-    assert hasattr(Maze,'location')
-    assert type(Maze.location) == list
+def test_player(test_maze):
+    assert hasattr(test_maze,'player')
 
-def test_can_move_to(Maze):
-    assert hasattr(Maze,'can_move_to')
+def test_location(test_maze):
+    assert hasattr(test_maze,'location')
+    assert type(test_maze.location) == list
+
+def test_can_move_to(test_maze):
+    assert hasattr(test_maze,'can_move_to')
 
     #would need fixture for this one
 
-def test_display(Maze):
-    assert hasattr(Maze,'display')
+def test_display(test_maze):
+    assert hasattr(test_maze,'display')
     assert None
 
-def test_find_random_spot(Maze):
-    assert hasattr(Maze,'find_random_spot')
+def test_find_random_spot(test_maze):
+    assert hasattr(test_maze,'find_random_spot')
 
 def test_lose(Maze):
         if self.content[line][column] == "E":
