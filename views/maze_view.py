@@ -26,8 +26,8 @@ class MazeView:
         running = True
 
         while running:
-        """A loop that updates the maze with new information after moving and loops movement
-        """
+        # """A loop that updates the maze with new information after moving and loops movement
+        # """
             clock.tick(60)
 
             window = pygame.display.set_mode(((len(self.maze.content[0])*50), (len(self.maze.content*50))))
@@ -35,46 +35,46 @@ class MazeView:
             window.fill((211, 211, 211))
 
             for idx, value in enumerate(self.maze.content):
-        """loops through the outer list of the nested lists for the maze
+        # """loops through the outer list of the nested lists for the maze
 
-        :param valueinenumerate: an inner list
-        :type valueinenumerate: list
-        """
+        # :param valueinenumerate: an inner list
+        # :type valueinenumerate: list
+        # """
                 for jdx, jvalue in enumerate(value):
-        """loops through the inner list of the nested lists for the maze
+        # """loops through the inner list of the nested lists for the maze
 
-        :param valueinenumerate: an inner list
-        :type valueinenumerate: list
-        :param jvalueinenumerate: One of the folowing strings "key, X,  , E"
-        :type jvalueinenumerate: string
-        """
+        # :param valueinenumerate: an inner list
+        # :type valueinenumerate: list
+        # :param jvalueinenumerate: One of the folowing strings "key, X,  , E"
+        # :type jvalueinenumerate: string
+        # """
                     if jvalue == "X":
-        """Checks if a spot is an X and creates a black square to represent a wall for it in pygame
-        """
+        # """Checks if a spot is an X and creates a black square to represent a wall for it in pygame
+        # """
                         rectangle_surface = pygame.Surface((50, 50))
                         rect_shape = pygame.draw.rect(rectangle_surface, (0, 0, 0), (0, 0, (jdx * 50),  (idx * 50)))
                         rectangle_surface.set_colorkey((255, 255, 255))
                         window.blit(rectangle_surface.convert(), ((jdx * 50), (idx * 50)))
                 
                     if jvalue == "P":
-        """Checks if a spot is the player or P and creates a blue square to represent it in pygame
-        """
+        # """Checks if a spot is the player or P and creates a blue square to represent it in pygame
+        # """
                         rectangle_surface = pygame.Surface((50, 50))
                         rect_shape = pygame.draw.rect(rectangle_surface, (0, 0, 255), (0, 0, (jdx * 50),  (idx * 50)))
                         rectangle_surface.set_colorkey((255, 255, 0))
                         window.blit(rectangle_surface.convert(), ((jdx * 50), (idx * 50)))
                 
                     if jvalue == "E":
-        """Checks if a spot is the exit or E and creates a green square to represent it in pygame
-        """
+        # """Checks if a spot is the exit or E and creates a green square to represent it in pygame
+        # """
                         rectangle_surface = pygame.Surface((50, 50))
                         rect_shape = pygame.draw.rect(rectangle_surface, (0, 255, 0), (0, 0, (jdx * 50),  (idx * 50)))
                         rectangle_surface.set_colorkey((255, 0, 255))
                         window.blit(rectangle_surface.convert(), ((jdx * 50), (idx * 50)))
                 
                     if jvalue == "key":
-        """Checks if a spot is a key and creates a red square to represent it in pygame
-        """
+        # """Checks if a spot is a key and creates a red square to represent it in pygame
+        # """
                         rectangle_surface = pygame.Surface((50, 50))
                         rect_shape = pygame.draw.rect(rectangle_surface, (255, 0, 0), (0, 0, (jdx * 50),  (idx * 50)))
                         rectangle_surface.set_colorkey((0, 255, 255))
@@ -86,8 +86,8 @@ class MazeView:
             moving.move()
 
             for event in pygame.event.get():
-        """Checks if the X button is clicked in pygame and closes the game if it is
-        """
+        # """Checks if the X button is clicked in pygame and closes the game if it is
+        # """
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     quit()

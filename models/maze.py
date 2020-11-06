@@ -26,8 +26,8 @@ class Maze:
 
         i = 0
         while i < 4:
-        """Loops through different spots of the the maze randomly, checking if the space is empty and if so places an item there. It does this four times.
-        """
+        # """Loops through spots randomly and places a key if the spot is empty
+        # """
             found = True
 
             while found:
