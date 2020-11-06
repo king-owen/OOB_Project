@@ -14,22 +14,22 @@ def test_player(test_maze):
 
 def test_location(test_maze):
     assert hasattr(test_maze,'location')
-    assert type(test_maze.location) == list
+    assert type(test_maze.location) == tuple
 
 def test_can_move_to(test_maze):
     assert hasattr(test_maze,'can_move_to')
+    assert test_maze.can_move_to([(x, y.index(" ")) for x, y in enumerate(test_maze.content) if " " in y][0][0],[(x, y.index(" ")) for x, y in enumerate(test_maze.content) if " " in y][0][1]) == True
+    assert test_maze.can_move_to([(x, y.index("X")) for x, y in enumerate(test_maze.content) if "X" in y][0][0],[(x, y.index("X")) for x, y in enumerate(test_maze.content) if "X" in y][0][1]) == False
 
-    #would need fixture for this one
 
 def test_display(test_maze):
     assert hasattr(test_maze,'display')
-    assert None
+
 
 def test_find_random_spot(test_maze):
     assert hasattr(test_maze,'find_random_spot')
+    plot = test_maze.find_random_spot()
+    test_maze.can_move_to(plot[0],plot[1]) == True
 
-def test_lose(Maze):
-        if self.content[line][column] == "E":
-            if len(Maze.player.backpack) == 4:
-                assert True
+
 
