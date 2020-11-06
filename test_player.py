@@ -1,14 +1,14 @@
 import pytest
-from player import Player
-#
-# @pytest.fixture
+from models.player import Player
 
+@pytest.fixture
+def test_player():
+    return Player()
 
-
-def test_bag(Player):
+def test_bag(test_player):
     #checks to see if Player class has the attribute 'backpack'
-    assert hasattr(Player,'backpack')
+    assert hasattr(test_player,'backpack')
 
-def test_pickup(Player):
+def test_pickup(test_player):
     #checks to see if Player class has the method appendItem
-    assert hasattr(Player,'appendItem')
+    assert hasattr(test_player,'appendItem')
