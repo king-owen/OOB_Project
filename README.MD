@@ -82,7 +82,7 @@ OOB-Porject
  ```
  
  # How to run the Code:
-  - [Python](https://www.python.org/) and [Pygame](https://www.pygame.org/download.shtml) and a Virtual Enviroment is required to run this code.
+  - [Python](https://www.python.org/) and Pygame(pip install pygame in the terminal) and a Virtual Enviroment is required to run this code.
 
  1. Download all the content to a folder.
  2. Open Command Prompt (CMD)
