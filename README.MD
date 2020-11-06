@@ -1,21 +1,10 @@
-# How to run the Code:
-  - [Python](https://www.python.org/) and [Pygame](https://www.pygame.org/download.shtml) is required to run this code.
+# Maze Game
+## Developed by Brent Lee, Owen Andercheck, Rony Tran
+  
+# Description:
+A Maze game created for ACIT 2515.
+This game is implemented in OOP using Pygame and a MVC model.
 
- 1. Download all the content to a folder.
- 2. Open Command Prompt (CMD)
- 3. Change Directory to the downloaded folder.
- 4. Input python main.py
- 5. Pygame now runs the code.
- 
- # How to Control the game:
- 1. Use WASD to move:
-    - W to move the Player Up.
-    - A to move the Player Left.
-    - S to move the Player Down.
-    - D to move the Player Right.
- 2. Collect all 4 of the items by moving over them.
- 3. Head towards the exit with all 4 items to win the game.
- 
 # Project Structure:
  ```
 OOB-Porject
@@ -91,4 +80,23 @@ OOB-Porject
  ┣ test_maze.py
  ┗ test_player.py
  ```
+ 
+ # How to run the Code:
+  - [Python](https://www.python.org/) and [Pygame](https://www.pygame.org/download.shtml) and a Virtual Enviroment is required to run this code.
+
+ 1. Download all the content to a folder.
+ 2. Open Command Prompt (CMD)
+ 3. Change Directory to the downloaded folder.
+ 4. Input python main.py
+ 5. Pygame now runs the code.
+ 
+ # How to Control the game:
+ 1. Use WASD to move:
+    - W to move the Player Up.
+    - A to move the Player Left.
+    - S to move the Player Down.
+    - D to move the Player Right.
+ 2. Collect all 4 of the items by moving over them.
+ 3. Head towards the exit with all 4 items to win the game.
+ 
   
