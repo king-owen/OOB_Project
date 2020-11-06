@@ -20,5 +20,11 @@ def test_display(Maze):
     assert hasattr(Maze,'display')
     assert None
 
-def find_random_spot(Maze):
+def test_find_random_spot(Maze):
     assert hasattr(Maze,'find_random_spot')
+
+def test_lose(Maze):
+        if self.content[line][column] == "E":
+            if len(Maze.player.backpack) == 4:
+                assert True
+
