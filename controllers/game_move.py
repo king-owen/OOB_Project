@@ -98,7 +98,7 @@ class GameMove:
         # """If the spot is the exit then says exit is reached and quits
         # """
                     running = False
-                    print("Exit Reached")
+                    # print("Exit Reached")
                     pygame.quit()
                     quit()
 

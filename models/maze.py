@@ -93,8 +93,8 @@ class Maze:
         """
         if self.content[line][column] == "key":
             self.player.appendItem("key")
-            print("Picked up Item")
-            print(self.player.backpack)
+            # print("Picked up Item")
+            # print(self.player.backpack)
 
             self.content[line][column] = " "
             return True
@@ -112,10 +112,10 @@ class Maze:
         :rtype: boolean
         """
         if self.content[line][column] == "E":
-            if len(self.player.backpack) == 4:
-                print("You win")
-            else:
-                print("You lose")
+            # if len(self.player.backpack) == 4:
+            #     print("You win")
+            # else:
+            #     print("You lose")
             return True
         else:
             return False
