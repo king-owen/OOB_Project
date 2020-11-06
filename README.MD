@@ -43,10 +43,18 @@ OOB-Porject
  ┃ ┗ .ropeproject
  ┃ ┃ ┗ config.py
  ┣ controllers
+ ┃ ┣ __pycache__
+ ┃ ┃ ┣ game_move.cpython-38.pyc
+ ┃ ┃ ┣ game_start.cpython-38.pyc
+ ┃ ┃ ┗ __init__.cpython-38.pyc
  ┃ ┣ game_move.py
  ┃ ┣ game_start.py
  ┃ ┗ __init__.py
  ┣ models
+ ┃ ┣ __pycache__
+ ┃ ┃ ┣ maze.cpython-38.pyc
+ ┃ ┃ ┣ player.cpython-38.pyc
+ ┃ ┃ ┗ __init__.cpython-38.pyc
  ┃ ┣ maze.py
  ┃ ┣ player.py
  ┃ ┗ __init__.py
@@ -63,8 +71,14 @@ OOB-Porject
  ┃ ┃ ┗ __init__.py
  ┃ ┗ __init__.py
  ┣ views
+ ┃ ┣ __pycache__
+ ┃ ┃ ┣ maze_view.cpython-38.pyc
+ ┃ ┃ ┗ __init__.cpython-38.pyc
  ┃ ┣ maze_view.py
  ┃ ┗ __init__.py
+ ┣ __pycache__
+ ┃ ┣ maze.cpython-38.pyc
+ ┃ ┗ player.cpython-38.pyc
  ┣ .gitattributes
  ┣ main.py
  ┣ maze.txt
