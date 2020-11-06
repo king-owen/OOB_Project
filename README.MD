@@ -1,4 +1,23 @@
-```
+# How to run the Code:
+  - [Python](https://www.python.org/) and [Pygame](https://www.pygame.org/download.shtml) is required to run this code.
+
+ 1. Download all the content to a folder.
+ 2. Open Command Prompt (CMD)
+ 3. Change Directory to the downloaded folder.
+ 4. Input python main.py
+ 5. Pygame now runs the code.
+ 
+ # How to Control the game:
+ 1. Use WASD to move:
+    - W to move the Player Up.
+    - A to move the Player Left.
+    - S to move the Player Down.
+    - D to move the Player Right.
+ 2. Collect all 4 of the items by moving over them.
+ 3. Head towards the exit with all 4 items to win the game.
+ 
+# Project Structure:
+ ```
 OOB-Porject
  ┣ .git
  ┃ ┣ hooks
@@ -44,18 +63,10 @@ OOB-Porject
  ┃ ┗ .ropeproject
  ┃ ┃ ┗ config.py
  ┣ controllers
- ┃ ┣ __pycache__
- ┃ ┃ ┣ game_move.cpython-38.pyc
- ┃ ┃ ┣ game_start.cpython-38.pyc
- ┃ ┃ ┗ __init__.cpython-38.pyc
  ┃ ┣ game_move.py
  ┃ ┣ game_start.py
  ┃ ┗ __init__.py
  ┣ models
- ┃ ┣ __pycache__
- ┃ ┃ ┣ maze.cpython-38.pyc
- ┃ ┃ ┣ player.cpython-38.pyc
- ┃ ┃ ┗ __init__.cpython-38.pyc
  ┃ ┣ maze.py
  ┃ ┣ player.py
  ┃ ┗ __init__.py
@@ -72,17 +83,12 @@ OOB-Porject
  ┃ ┃ ┗ __init__.py
  ┃ ┗ __init__.py
  ┣ views
- ┃ ┣ __pycache__
- ┃ ┃ ┣ maze_view.cpython-38.pyc
- ┃ ┃ ┗ __init__.cpython-38.pyc
  ┃ ┣ maze_view.py
  ┃ ┗ __init__.py
- ┣ __pycache__
- ┃ ┣ maze.cpython-38.pyc
- ┃ ┗ player.cpython-38.pyc
  ┣ .gitattributes
  ┣ main.py
  ┣ maze.txt
  ┣ test_maze.py
  ┗ test_player.py
  ```
+  
