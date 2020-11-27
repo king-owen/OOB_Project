@@ -3,6 +3,7 @@ from controllers.game_start import GameStart
 from flask import Flask, request, render_template
 from models.database_manager import DatabaseManager
 from models.score import Score
+from models.score_manager import ScoreManager
 
 # app = Flask(__name__)
 
