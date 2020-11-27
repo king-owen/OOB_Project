@@ -10,7 +10,8 @@ class DatabaseManager:
         self._cursor.execute('SELECT name from sqlite_master where type="table"')
         res = self._cursor.fetchone()
         if not res or "scores" not in res:
-            self._cursor.execute("CREATE TABLE scores (name TEXT NOT NULL,score INTEGER NOT NULL, date TEXT NOT NULL)")
+            print("creating table")
+            self._cursor.execute("CREATE TABLE scores (name TEXT NOT NULL,score INTEGER NOT NULL,date TEXT NOT NULL)")
             self._db.commit()
 
     def add(self, score):

@@ -82,26 +82,31 @@ class ScoreManager:
         """
         with open(json_file, "r") as loadfile:
             data = json.load(loadfile)
+            print(data)
             for item in data.get("scores"):
-                new_score = Score(item.get("name"), item.get("score"))
+                new_score = Score(item.get("name"), item.get("score"), item.get("date"))
                 self.add_score(new_score)
 
 if __name__ == "__main__":
 
     manager = ScoreManager()
 
-    score1 = Score("dave", 100)
+    manager.from_json("scoresm.json")
 
-    score2 = Score("maya", 50)
+    manager.scores
 
-    score3 = Score("sam", 0)
+    # score1 = Score("dave", 100)
 
-    manager.add_score(score1)
+    # score2 = Score("maya", 10)
 
-    manager.add_score(score2)
+    # score3 = Score("sam", 0)
 
-    manager.add_score(score3)
+    # manager.add_score(score1)
 
-    print(manager.get_scores())
+    # manager.add_score(score2)
 
-    manager.to_json("scoresm.json")
+    # manager.add_score(score3)
+
+    # print(manager.get_scores())
+
+    # manager.to_json("scoresm.json")
