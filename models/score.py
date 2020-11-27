@@ -2,20 +2,46 @@ import datetime, json
 
 class Score:
 
-    def __init__(self, name="", score=0, date=""):
-        self.player_name = name
-        self.score = 0
+    def __init__(self, _name="", _score=0, _date=""):
+        self._player_name = name
+        self._score = score
         current = datetime.datetime.now()
-        self.date = "Date: {}, Time: {}".format(current.date(), current.time())
+        self._date = "Date: {}, Time: {}".format(current.date(), current.time())
+
+    @property
+    def change_name(self, name):
+        self.player_name = name
+
+    @property
+    def change_score(self, score):
+        self.score = score
+
+    @property
+    def change_date(self, date):
+        self.date = date
+
+    @property
+    def name(self):
+        return self._name
+
+    @property
+    def score(self):
+        return self._score
+
+    @property
+    def date(self):
+        return self._date
 
     @classmethod
     def from_json(self, json_file):
         with open(json_file, "r") as loadfile:
             data = json.load(loadfile)
-            for item in data.get("scores"):
-                print(item)
-                new_score = Score(item.get("name"), item.get("score"))
-                self.add_score(new_score)
+            print(data)
+            # self.player_name = 
+            # for item in data.get("scores"):
+            #     print(item)
+            #     new_score = Score(item.get("name"), item.get("score"))
+            #     self.add_score(new_score)
 
     @classmethod
     def from_dict(self, score_dict):
@@ -23,7 +49,9 @@ class Score:
 
     def to_dict(self):
         serial = {}
-        serial[self.player_name] = [self.score, self.date]
+        serial["name"] = self.player_name
+        serial["score"] = self.score
+        serial["date"] = self.date
         return serial
         #change to work with from_json so that it doesn't use score
 
