@@ -2,27 +2,28 @@ import datetime, json
 
 class Score:
 
-    def __init__(self, _name="", _score=0, _date=""):
+    current = datetime.datetime.now()
+
+    def __init__(self, _name="", _score=0, _date="Date: {}, Time: {}".format(current.date(), current.time())):
         self._player_name = _name
         self._score = _score
-        current = datetime.datetime.now()
-        self._date = "Date: {}, Time: {}".format(current.date(), current.time())
+        self._date = _date
 
     @property
     def change_name(self, name):
-        self.player_name = name
+        self._player_name = name
 
     @property
     def change_score(self, score):
-        self.score = score
+        self._score = score
 
     @property
     def change_date(self, date):
-        self.date = date
+        self._date = date
 
     @property
     def name(self):
-        return self._name
+        return self._player_name
 
     @property
     def score(self):
@@ -45,11 +46,14 @@ class Score:
 
     @classmethod
     def from_dict(self, score_dict):
-        pass
+        self.change_name = score_dict.get("name")
+        self.change_score = score_dict.get("score")
+        self.change_date = score_dict.get("date")
+        
 
     def to_dict(self):
         serial = {}
-        serial["name"] = self.player_name
+        serial["name"] = self.name
         serial["score"] = self.score
         serial["date"] = self.date
         return serial
@@ -67,4 +71,14 @@ print(score.to_dict())
 
 score.to_json()
 
-score.from_json("scores.json")
+test_dic = score.to_dict()
+
+print(test_dic)
+
+score2 = Score("tom", 100, "never")
+
+print(score2.to_dict())
+
+score2.from_dict(test_dic)
+
+print(score2.to_dict())
