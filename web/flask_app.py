@@ -1,7 +1,9 @@
+project = 'OOB-Porject'
+
 from flask import Flask, request, render_template
-from OOB-Porject.assignment_demo.models.database_manager import DatabaseManager
-from OOB-Porject.assignment_demo.models.score import Score
-from OOB-Porject.assignment_demo.models.score_manager import ScoreManager
+from project.assignment_demo.models.database_manager import DatabaseManager
+from assignment_demo.models.score import Score
+from assignment_demo.models.score_manager import ScoreManager
 
 app = Flask(__name__)
 
