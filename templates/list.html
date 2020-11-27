@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ul>
+{% for score in scores %}
+    <li>{{ score.get("name") }} ({{ score.get("score") }}) - {{ score.get("date) }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

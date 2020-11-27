@@ -2,7 +2,7 @@ import datetime, json
 
 class Score:
 
-    def __init__(self, name=""):
+    def __init__(self, name="", score=0, date=""):
         self.player_name = name
         self.score = 0
         current = datetime.datetime.now()
