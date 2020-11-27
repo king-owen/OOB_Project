@@ -1,5 +1,3 @@
-from models.maze import Maze 
-from controllers.game_start import GameStart
 from flask import Flask, request, render_template
 from models.database_manager import DatabaseManager
 from models.score import Score
@@ -39,8 +37,4 @@ def list_all_scores():
   return render_template("list.html", scores=scores)
 
 if __name__ == "__main__":
-  """The method to run the program
-  """
-  game = GameStart("maze.txt")
-  game.run()
   app.run(debug=True)

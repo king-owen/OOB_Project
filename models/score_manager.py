@@ -1,4 +1,4 @@
-from score import Score
+from .score import Score
 import json
 
 class ScoreManager:
