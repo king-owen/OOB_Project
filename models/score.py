@@ -3,8 +3,8 @@ import datetime, json
 class Score:
 
     def __init__(self, _name="", _score=0, _date=""):
-        self._player_name = name
-        self._score = score
+        self._player_name = _name
+        self._score = _score
         current = datetime.datetime.now()
         self._date = "Date: {}, Time: {}".format(current.date(), current.time())
 
