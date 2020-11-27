@@ -10,11 +10,10 @@ def add_good_score():
 
 def print_scores():
     data = requests.get(f"{API_URL}/list").json()
-    print(data["scores"])
-    # output = "\n".join(
-    #     [f"{score['name']}: {score['score']}: {score['date']}" for score in data["scores"]]
-    # )
-    # print(output)
+    output = "\n".join(
+        [f"{score['name']}: {score['score']}: {score['date']}" for score in data["scores"]]
+    )
+    print(output)
 
 
 def remove_good_score():
