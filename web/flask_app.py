@@ -1,5 +1,3 @@
-project = 'OOB-Porject'
-
 from flask import Flask, request, render_template
 from project.assignment_demo.models.database_manager import DatabaseManager
 from assignment_demo.models.score import Score
