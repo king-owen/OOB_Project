@@ -4,11 +4,13 @@ from models.score import Score
 from models.score_manager import ScoreManager
 
 app = Flask(__name__)
+score_manager = ScoreManager()
+database = "scores.db"
 
 @app.route('/api/list')
 def list_all_scores():
     print("work")
-    manager = DatabaseManager("scores2.db")
+    manager = DatabaseManager(database)
     scores = manager.get_all()
     manager.close()
 
@@ -18,7 +20,7 @@ def list_all_scores():
 def add_new_score():
     try:
         data = request.get_json()
-        manager = DatabaseManager("scores2.db")
+        manager = DatabaseManager(database)
         score = Score(data["name"], data["score"], data["date"])
 
         manager.add(score)
@@ -28,19 +30,19 @@ def add_new_score():
     except:
         return "Invalid data provided.", 400
 
-# @app.route('/api/list', methods=["DELETE"])
-# def delete_score():
-#     try:
-#         data = request.get_json()
-#         score_manager.remove_score(data["name"])
-#         return "", 204
-#     except:
-#         return "Error", 400
+@app.route('/api/list', methods=["DELETE"])
+def delete_score():
+    try:
+        data = request.get_json()
+        score_manager.remove_score(data["name"])
+        return "", 204
+    except:
+        return "Error", 400
 
 @app.route('/')
 def list_all_scores_html():
     print("also")
-    manager = DatabaseManager("scores2.db")
+    manager = DatabaseManager(database)
     scores = manager.get_all()
     print(scores)
     manager.close()

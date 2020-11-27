@@ -1,17 +1,23 @@
 import pygame
 import pygame.locals
+import datetime
+from models.score import Score
+from models.score_manager import ScoreManager
 
 class GameMove:
     """Allows a player to move
     """
 
-    def __init__(self, maze):
+    def __init__(self, maze, start_time, name):
         """Takes a nested list and creates an instance of the GameMove class
 
         :param maze: A nested list of letters
         :type maze: nested list
         """
         self.maze = maze
+        self.name = name
+        self.end_time = 0
+        self.start_time = start_time
 
     def move(self):
         """Allows for movement in pygame
@@ -100,6 +106,17 @@ class GameMove:
                     running = False
                     # print("Exit Reached")
                     pygame.quit()
+                    end_time = datetime.datetime.now()
+                    self.end_time = (60 * end_time.minute) + end_time.second
+                    print(self.end_time, "inside game move")
+                    game_time = self.end_time - self.start_time
+                    score = Score(self.name, (100 - game_time))
+                    score_manager = ScoreManager()
+                    score_manager.add_score(score)
+                    score_manager.from_json("scores.json")
+                    score_manager.to_json("scores.json")
+                    print(score_manager.get_scores())
+                    
                     quit()
 
             for event in pygame.event.get():

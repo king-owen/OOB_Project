@@ -2,18 +2,23 @@ from controllers.game_move import GameMove
 import pygame
 import pygame.locals
 import sprites
+import datetime
 
 class MazeView:
     """Creates a view of the maze in pygame
     """
 
-    def __init__(self, maze):
+    def __init__(self, maze, name):
         """Creates an instance of the maze view
 
         :param maze: An attribute of the maze class that is the nested lists for the maze
         :type maze: nested lists
         """
         self.maze = maze
+        self.name = name
+        start_time = datetime.datetime.now()
+        self.start_time = (60 * start_time.minute) + start_time.second
+        print(self.start_time, "init maze")
 
     def display_maze(self):
         """Starts pygame display, activates movement, and displays maze
@@ -82,7 +87,7 @@ class MazeView:
 
             pygame.display.update()
 
-            moving = GameMove(self.maze)
+            moving = GameMove(self.maze, self.start_time, self.name)
             moving.move()
 
             for event in pygame.event.get():
