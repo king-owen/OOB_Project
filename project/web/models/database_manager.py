@@ -1,3 +1,6 @@
+import sys
+sys.path.insert(1, "/project/assignment_demo/models")
+
 import sqlite3
 from .score import Score
 
