@@ -20,6 +20,7 @@ def list_all_scores():
 def add_new_score():
     try:
         data = request.get_json()
+        print(data)
         manager = DatabaseManager(database)
         score = Score(data["name"], data["score"], data["date"])
 

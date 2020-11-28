@@ -113,7 +113,7 @@ class GameMove:
                     score = Score(self.name, (100 - game_time))
                     score_manager = ScoreManager()
                     score_manager.add_score(score)
-                    score_manager.from_json("scores.json")
+                    score_manager.from_json("../scores.json")
                     score_manager.to_json("scores.json")
                     print(score_manager.get_scores())
                     

@@ -72,7 +72,7 @@ class ScoreManager:
         :param json_file: A json file
         :type json_file: json file
         """
-        with open(json_file, "w") as outfile:
+        with open("../"+json_file, "w") as outfile:
             json.dump(self.serialize(), outfile)
 
     def from_json(self, json_file):
