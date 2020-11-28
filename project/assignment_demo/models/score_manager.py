@@ -1,5 +1,6 @@
 from .score import Score
 import json
+from os import path
 
 class ScoreManager:
     """Class that collects and manages scores
@@ -80,12 +81,13 @@ class ScoreManager:
         :param json_file: a json file
         :type json_file: json file
         """
-        with open(json_file, "r") as loadfile:
-            data = json.load(loadfile)
-            print(data)
-            for item in data.get("scores"):
-                new_score = Score(item.get("name"), item.get("score"), item.get("date"))
-                self.add_score(new_score)
+        if path.exists(json_file):
+            with open(json_file, "r") as loadfile:
+                data = json.load(loadfile)
+                print(data)
+                for item in data.get("scores"):
+                    new_score = Score(item.get("name"), item.get("score"), item.get("date"))
+                    self.add_score(new_score)
 
 if __name__ == "__main__":
 
