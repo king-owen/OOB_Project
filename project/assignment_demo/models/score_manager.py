@@ -84,7 +84,6 @@ class ScoreManager:
         if path.exists(json_file):
             with open(json_file, "r") as loadfile:
                 data = json.load(loadfile)
-                print(data)
                 for item in data.get("scores"):
                     new_score = Score(item.get("name"), item.get("score"), item.get("date"))
                     self.add_score(new_score)
