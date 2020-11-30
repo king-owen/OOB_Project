@@ -10,18 +10,6 @@ class Score:
         self._date = _date
 
     @property
-    def change_name(self, name):
-        self._player_name = name
-
-    @property
-    def change_score(self, score):
-        self._score = score
-
-    @property
-    def change_date(self, date):
-        self._date = date
-
-    @property
     def name(self):
         return self._player_name
 
@@ -33,23 +21,17 @@ class Score:
     def date(self):
         return self._date
 
-    # @classmethod
-    # def from_json(self, json_file):
-    #     with open(json_file, "r") as loadfile:
-    #         data = json.load(loadfile)
-    #         print(data)
-    #         # self.player_name = 
-    #         # for item in data.get("scores"):
-    #         #     print(item)
-    #         #     new_score = Score(item.get("name"), item.get("score"))
-    #         #     self.add_score(new_score)
+    @name.setter
+    def name(self, name):
+        self._player_name = name
 
-    # @classmethod
-    # def from_dict(self, score_dict):
-    #     self.change_name = score_dict.get("name")
-    #     self.change_score = score_dict.get("score")
-    #     self.change_date = score_dict.get("date")
-        
+    @score.setter
+    def score(self, score):
+        self._score = score
+
+    @date.setter
+    def date(self, date):
+        self._date = date
 
     def to_dict(self):
         score_dict = {}
@@ -57,10 +39,6 @@ class Score:
         score_dict["score"] = self.score
         score_dict["date"] = self.date
         return score_dict
-
-    # def to_json(self):
-    #     with open("scores.json", "w") as outfile:
-    #         json.dump(self.to_dict(), outfile)
 
 # score = Score()
 

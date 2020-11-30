@@ -1,5 +1,6 @@
 from .score import Score
 import json
+from os import path
 
 class ScoreManager:
     """Class that collects and manages scores
@@ -33,7 +34,7 @@ class ScoreManager:
         :param remove: intance of Score
         :type remove: String
         """
-        self._scores.pop(remove)
+        del self._scores[remove.name]
 
     def __len__(self):
         """Returns the length of the ScoreManager dictionary
@@ -71,7 +72,7 @@ class ScoreManager:
         :param json_file: A json file
         :type json_file: json file
         """
-        with open(json_file, "w") as outfile:
+        with open("../"+json_file, "w") as outfile:
             json.dump(self.serialize(), outfile)
 
     def from_json(self, json_file):
@@ -80,12 +81,12 @@ class ScoreManager:
         :param json_file: a json file
         :type json_file: json file
         """
-        with open(json_file, "r") as loadfile:
-            data = json.load(loadfile)
-            print(data)
-            for item in data.get("scores"):
-                new_score = Score(item.get("name"), item.get("score"), item.get("date"))
-                self.add_score(new_score)
+        if path.exists(json_file):
+            with open(json_file, "r") as loadfile:
+                data = json.load(loadfile)
+                for item in data.get("scores"):
+                    new_score = Score(item.get("name"), item.get("score"), item.get("date"))
+                    self.add_score(new_score)
 
 if __name__ == "__main__":
 
