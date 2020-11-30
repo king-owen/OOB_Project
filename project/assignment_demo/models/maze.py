@@ -1,6 +1,7 @@
 
 import csv, random
 from .player import Player
+from .score import Score
 
 class Maze:
     """Creates a maze ffrom a text file
@@ -112,10 +113,12 @@ class Maze:
         :rtype: boolean
         """
         if self.content[line][column] == "E":
-            # if len(self.player.backpack) == 4:
-            #     print("You win")
-            # else:
-            #     print("You lose")
+            if len(self.player.backpack) == 4:
+                print("\n\nCongratulations. You win!\n\n")
+            else:
+                Score.score = 0
+                print("\n\nYou lose. You didn't collect all the items!\n\n")
+
             return True
         else:
             return False
