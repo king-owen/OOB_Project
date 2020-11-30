@@ -34,7 +34,7 @@ class ScoreManager:
         :param remove: intance of Score
         :type remove: String
         """
-        self._scores.pop(remove)
+        del self._scores[remove.name]
 
     def __len__(self):
         """Returns the length of the ScoreManager dictionary
