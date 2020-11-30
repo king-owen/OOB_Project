@@ -10,18 +10,6 @@ class Score:
         self._date = _date
 
     @property
-    def change_name(self, name):
-        self._player_name = name
-
-    @property
-    def change_score(self, score):
-        self._score = score
-
-    @property
-    def change_date(self, date):
-        self._date = date
-
-    @property
     def name(self):
         return self._player_name
 
@@ -32,6 +20,18 @@ class Score:
     @property
     def date(self):
         return self._date
+
+    @name.setter
+    def name(self, name):
+        self._player_name = name
+
+    @score.setter
+    def score(self, score):
+        self._score = score
+
+    @date.setter
+    def date(self, date):
+        self._date = date
 
     def to_dict(self):
         score_dict = {}
