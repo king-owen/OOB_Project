@@ -7,35 +7,68 @@ This game is implemented in OOP using Pygame and a MVC model.
 
 # Project Structure:
  ```
-OOB-Porject
- ┣ controllers
- ┃ ┣ game_move.py
- ┃ ┣ game_start.py
- ┃ ┗ __init__.py
- ┣ models
- ┃ ┣ maze.py
- ┃ ┣ player.py
- ┃ ┗ __init__.py
- ┣ sprites
- ┃ ┣ door.png
- ┃ ┣ key.png
- ┃ ┗ player.png
- ┣ tests
+project
+ ┣ assignment_demo
  ┃ ┣ controllers
+ ┃ ┃ ┣ game_move.py
+ ┃ ┃ ┣ game_start.py
  ┃ ┃ ┗ __init__.py
+ ┃ ┣ documentation
+ ┃ ┃ ┗ uml.pdf
  ┃ ┣ models
+ ┃ ┃ ┣ maze.py
+ ┃ ┃ ┣ player.py
+ ┃ ┃ ┣ score.py
+ ┃ ┃ ┣ score_manager.py
+ ┃ ┃ ┗ __init__.py
+ ┃ ┣ sprites
+ ┃ ┃ ┣ door.png
+ ┃ ┃ ┣ key.png
+ ┃ ┃ ┗ player.png
+ ┃ ┣ tests
+ ┃ ┃ ┣ controllers
+ ┃ ┃ ┃ ┗ __init__.py
+ ┃ ┃ ┣ test_models
+ ┃ ┃ ┃ ┣ maze.txt
+ ┃ ┃ ┃ ┣ test_maze.py
+ ┃ ┃ ┃ ┣ test_player.py
+ ┃ ┃ ┃ ┣ test_score.py
+ ┃ ┃ ┃ ┣ test_score_manager.py
+ ┃ ┃ ┃ ┗ __init__.py
+ ┃ ┃ ┣ views
+ ┃ ┃ ┃ ┗ __init__.py
+ ┃ ┃ ┣ test_maze.py
+ ┃ ┃ ┣ test_player.py
+ ┃ ┃ ┣ test_score.py
+ ┃ ┃ ┣ test_score_manager.py
  ┃ ┃ ┗ __init__.py
  ┃ ┣ views
+ ┃ ┃ ┣ maze_view.py
  ┃ ┃ ┗ __init__.py
+ ┃ ┣ main.py
+ ┃ ┣ maze.txt
+ ┃ ┣ README.MD
+ ┃ ┣ test_maze.py
+ ┃ ┣ test_player.py
+ ┃ ┣ test_score.py
+ ┃ ┣ test_score_manager.py
  ┃ ┗ __init__.py
- ┣ views
- ┃ ┣ maze_view.py
+ ┣ web
+ ┃ ┣ models
+ ┃ ┃ ┣ database_manager.py
+ ┃ ┃ ┣ score.py
+ ┃ ┃ ┗ score_manager.py
+ ┃ ┣ templates
+ ┃ ┃ ┣ base.html
+ ┃ ┃ ┗ list.html
+ ┃ ┣ client.py
+ ┃ ┣ flask_app.py
+ ┃ ┣ test_flask_app.py
  ┃ ┗ __init__.py
- ┣ main.py
- ┣ maze.txt
- ┣ test_maze.py
- ┗ test_player.py
+ ┣ scores.json
+ ┗ __init__.py
  ```
+ # How to test the Code:
  
  # How to run the Code:
   - [Python](https://www.python.org/) and Pygame(pip install pygame in the terminal) and a Virtual Enviroment is required to run this code.
