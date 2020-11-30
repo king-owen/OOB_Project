@@ -4,7 +4,7 @@ from .player import Player
 from .score import Score
 
 class Maze:
-    """Creates a maze ffrom a text file
+    """Creates a maze from a text file
     """
 
     def __init__(self,filename):
@@ -28,7 +28,6 @@ class Maze:
         i = 0
         while i < 4:
         # """Loops through spots randomly and places a key if the spot is empty
-        # """
             found = True
 
             while found:
