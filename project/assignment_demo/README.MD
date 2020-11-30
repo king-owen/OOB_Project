@@ -68,6 +68,7 @@ project
  ┣ scores.json
  ┗ __init__.py
  ```
+ # How to test the Code:
  
  # How to run the Code:
   - [Python](https://www.python.org/) and Pygame(pip install pygame in the terminal) and a Virtual Enviroment is required to run this code.
