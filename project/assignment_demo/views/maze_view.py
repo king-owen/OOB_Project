@@ -18,7 +18,6 @@ class MazeView:
         self.name = name
         start_time = datetime.datetime.now()
         self.start_time = (60 * start_time.minute) + start_time.second
-        print(self.start_time, "init maze")
 
     def display_maze(self):
         """Starts pygame display, activates movement, and displays maze

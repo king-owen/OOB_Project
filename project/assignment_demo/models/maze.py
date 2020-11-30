@@ -24,6 +24,7 @@ class Maze:
         self.location = [(x, y.index("P")) for x, y in enumerate(self.content) if "P" in y][0]
         """Tracks the location of the Player
         """
+        self.complete = True
 
         i = 0
         while i < 4:
@@ -115,7 +116,7 @@ class Maze:
             if len(self.player.backpack) == 4:
                 print("\n\nCongratulations. You win!\n\n")
             else:
-                Score.score = 0
+                self.complete = False
                 print("\n\nYou lose. You didn't collect all the items!\n\n")
 
             return True

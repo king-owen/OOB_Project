@@ -107,15 +107,19 @@ class GameMove:
                     # print("Exit Reached")
                     pygame.quit()
                     end_time = datetime.datetime.now()
-                    self.end_time = (60 * end_time.minute) + end_time.second
-                    print(self.end_time, "inside game move")
+                    if (end_time.minute == 0) and (self.start_time.minute != 0):
+                        self.end_time = (60 * 60) + end_time.second
+                    else:
+                        self.end_time = (60 * end_time.minute) + end_time.second
                     game_time = self.end_time - self.start_time
-                    score = Score(self.name, (100 - game_time))
+                    if self.maze.complete == True:
+                        score = Score(self.name, (100 - game_time))
+                    else:
+                        score = Score(self.name, 0)
                     score_manager = ScoreManager()
                     score_manager.add_score(score)
                     score_manager.from_json("../scores.json")
                     score_manager.to_json("scores.json")
-                    print(score_manager.get_scores())
                     
                     quit()
 

@@ -26,11 +26,11 @@ class Score:
         self._player_name = name
 
     @score.setter
-    def score(self, score):
+    def set_score(self, score):
         self._score = score
 
     @date.setter
-    def date(self, date):
+    def set_date(self, date):
         self._date = date
 
     def to_dict(self):

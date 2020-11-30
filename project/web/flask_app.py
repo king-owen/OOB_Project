@@ -1,36 +1,18 @@
 from flask import Flask, request, render_template
-from models.database_manager import DatabaseManager
 from models.score import Score
 from models.score_manager import ScoreManager
+import os
 
 app = Flask(__name__)
 score_manager = ScoreManager()
-score_manager.from_json("project/scores.json")
-database = "scores.db"
+score_manager.from_json("../scores.json")
 
 @app.route('/api/list')
 def list_all_scores():
-    # print("work")
-    # manager = DatabaseManager(database)
-    # scores = manager.get_all()
-    # manager.close()
-
     return {"scores": score_manager.get_scores()}
 
 @app.route('/api/new', methods=["PUT"])
 def add_new_score():
-    # try:
-    #     data = request.get_json("project/scores.json")
-    #     print(data)
-    #     manager = DatabaseManager(database)
-    #     score = Score(data["name"], data["score"], data["date"])
-
-    #     manager.add(score)
-
-    #     manager.close()
-    #     return "", 204
-    # except:
-    #     return "Invalid data provided.", 400
     try:
     #-- get the JSON data of the request, containing a new object to add        
         data = request.get_json()
@@ -45,12 +27,6 @@ def add_new_score():
 
 @app.route('/api/list', methods=["DELETE"])
 def delete_score():
-    # try:
-    #     data = request.get_json()
-    #     score_manager.remove_score(data["name"])
-    #     return "", 204
-    # except:
-    #     return "Error", 400
     try:
         #-- get the JSON data of the request, containing an object to remove       
         data = request.get_json()
@@ -74,14 +50,19 @@ def delete_score():
 
 @app.route('/')
 def list_all_scores_html():
-    # print("/ route")
-    # manager = DatabaseManager(database)
-    # scores = manager.get_all()
-    # print(scores)
-    # manager.close()
     scores = score_manager.get_scores()
+    sorted_scores = []
+    for count, item in enumerate(scores):
+        next_score = item
+        for count2, item2 in enumerate(scores):
+            if (item2.get("score")) > (next_score.get("score")):
+                next_score = item2
+                count = count2
+        scores.pop(count)
+        sorted_scores.append(next_score)
+    full_sort = sorted_scores + scores
 
-    return render_template("list.html", scores=scores)
+    return render_template("list.html", scores=full_sort)
 
 if __name__ == "__main__":
     print("main")

@@ -1,6 +1,5 @@
 from models.maze import Maze 
 from controllers.game_start import GameStart
-# import sys
 
 if __name__ == "__main__":
   """The method to run the program
