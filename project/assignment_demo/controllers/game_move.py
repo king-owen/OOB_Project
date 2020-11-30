@@ -8,7 +8,7 @@ class GameMove:
     """Allows a player to move
     """
 
-    def __init__(self, maze, start_time, name):
+    def __init__(self, maze, start_time, name, timer):
         """Takes a nested list and creates an instance of the GameMove class
 
         :param maze: A nested list of letters
@@ -18,6 +18,7 @@ class GameMove:
         self.name = name
         self.end_time = 0
         self.start_time = start_time
+        self.timer = timer
 
     def move(self):
         """Allows for movement in pygame
@@ -129,6 +130,11 @@ class GameMove:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     quit()
+
+            if self.timer == 0:
+                pygame.quit()
+                print("\nYou lose, try again to add your score!\n")
+                quit()
 
             running = False
             

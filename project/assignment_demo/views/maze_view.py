@@ -4,6 +4,12 @@ import pygame.locals
 import sprites
 import datetime
 
+def create_text_surface(text):
+    arial = pygame.font.SysFont('arial', 24)
+    text_surface = arial.render(text, True, (0, 0, 0))
+
+    return text_surface
+
 class MazeView:
     """Creates a view of the maze in pygame
     """
@@ -18,6 +24,7 @@ class MazeView:
         self.name = name
         start_time = datetime.datetime.now()
         self.start_time = (60 * start_time.minute) + start_time.second
+        self.timer = 0
 
     def display_maze(self):
         """Starts pygame display, activates movement, and displays maze
@@ -34,7 +41,7 @@ class MazeView:
         # """
             clock.tick(60)
 
-            window = pygame.display.set_mode(((len(self.maze.content[0])*50), (len(self.maze.content*50))))
+            window = pygame.display.set_mode(((len(self.maze.content[0])*50), (len(self.maze.content*50) + 50)))
             window.set_colorkey((255, 255, 255))
             window.fill((211, 211, 211))
 
@@ -84,14 +91,80 @@ class MazeView:
                         rectangle_surface.set_colorkey((0, 255, 255))
                         window.blit(rectangle_surface.convert(), ((jdx * 50), (idx * 50)))
 
+            self.timer = 100 - (pygame.time.get_ticks() // 600)
+            show_fps = create_text_surface(str(self.timer))
+            timer = create_text_surface("Timer:")
+            backpack = create_text_surface("Backpack:")
+            window.blit(timer, (5, (len(self.maze.content*50) + 13)))
+            window.blit(show_fps, (62, (len(self.maze.content*50) + 13)))
+
+            window.blit(backpack, (100, (len(self.maze.content*50) + 13)))
+            if len(self.maze.player.backpack) == 1:
+
+                    rectangle_surface = pygame.Surface((24, 24))
+                    rect_shape = pygame.draw.rect(rectangle_surface, (250, 0, 0), (0, 0, (jdx * 24),  (idx * 24)))
+                    rectangle_surface.set_colorkey((0, 255, 255))
+                    window.blit(rectangle_surface.convert(), ((200, (len(self.maze.content*50) + 13))))
+
+            if len(self.maze.player.backpack) == 2:
+
+                rectangle_surface = pygame.Surface((24, 24))
+                rect_shape = pygame.draw.rect(rectangle_surface, (250, 0, 0), (0, 0, (jdx * 24),  (idx * 24)))
+                rectangle_surface.set_colorkey((0, 255, 255))
+                window.blit(rectangle_surface.convert(), ((200, (len(self.maze.content*50) + 13))))
+
+                rectangle_surface = pygame.Surface((24, 24))
+                rect_shape = pygame.draw.rect(rectangle_surface, (250, 0, 0), (0, 0, (jdx * 24),  (idx * 24)))
+                rectangle_surface.set_colorkey((0, 255, 255))
+                window.blit(rectangle_surface.convert(), ((230, (len(self.maze.content*50) + 13))))
+
+            if len(self.maze.player.backpack) == 3:
+
+                rectangle_surface = pygame.Surface((24, 24))
+                rect_shape = pygame.draw.rect(rectangle_surface, (250, 0, 0), (0, 0, (jdx * 24),  (idx * 24)))
+                rectangle_surface.set_colorkey((0, 255, 255))
+                window.blit(rectangle_surface.convert(), ((200, (len(self.maze.content*50) + 13))))
+
+                rectangle_surface = pygame.Surface((24, 24))
+                rect_shape = pygame.draw.rect(rectangle_surface, (250, 0, 0), (0, 0, (jdx * 24),  (idx * 24)))
+                rectangle_surface.set_colorkey((0, 255, 255))
+                window.blit(rectangle_surface.convert(), ((230, (len(self.maze.content*50) + 13))))
+
+                rectangle_surface = pygame.Surface((24, 24))
+                rect_shape = pygame.draw.rect(rectangle_surface, (250, 0, 0), (0, 0, (jdx * 24),  (idx * 24)))
+                rectangle_surface.set_colorkey((0, 255, 255))
+                window.blit(rectangle_surface.convert(), ((260, (len(self.maze.content*50) + 13))))
+
+            if len(self.maze.player.backpack) == 4:
+
+                rectangle_surface = pygame.Surface((24, 24))
+                rect_shape = pygame.draw.rect(rectangle_surface, (250, 0, 0), (0, 0, (jdx * 24),  (idx * 24)))
+                rectangle_surface.set_colorkey((0, 255, 255))
+                window.blit(rectangle_surface.convert(), ((200, (len(self.maze.content*50) + 13))))
+
+                rectangle_surface = pygame.Surface((24, 24))
+                rect_shape = pygame.draw.rect(rectangle_surface, (250, 0, 0), (0, 0, (jdx * 24),  (idx * 24)))
+                rectangle_surface.set_colorkey((0, 255, 255))
+                window.blit(rectangle_surface.convert(), ((230, (len(self.maze.content*50) + 13))))
+
+                rectangle_surface = pygame.Surface((24, 24))
+                rect_shape = pygame.draw.rect(rectangle_surface, (250, 0, 0), (0, 0, (jdx * 24),  (idx * 24)))
+                rectangle_surface.set_colorkey((0, 255, 255))
+                window.blit(rectangle_surface.convert(), ((260, (len(self.maze.content*50) + 13))))
+
+                rectangle_surface = pygame.Surface((24, 24))
+                rect_shape = pygame.draw.rect(rectangle_surface, (250, 0, 0), (0, 0, (jdx * 24),  (idx * 24)))
+                rectangle_surface.set_colorkey((0, 255, 255))
+                window.blit(rectangle_surface.convert(), ((290, (len(self.maze.content*50) + 13))))
+
             pygame.display.update()
 
-            moving = GameMove(self.maze, self.start_time, self.name)
+            moving = GameMove(self.maze, self.start_time, self.name, self.timer)
             moving.move()
 
-            for event in pygame.event.get():
-        # """Checks if the X button is clicked in pygame and closes the game if it is
-        # """
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    quit()
+        #     for event in pygame.event.get():
+        # # """Checks if the X button is clicked in pygame and closes the game if it is
+        # # """
+        #         if event.type == pygame.QUIT:
+        #             pygame.quit()
+        #             quit()
