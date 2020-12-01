@@ -1,5 +1,5 @@
 import pytest
-from models.player import Player
+from project.assignment_demo.models.player import Player
 
 
 @pytest.fixture
