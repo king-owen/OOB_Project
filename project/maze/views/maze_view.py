@@ -135,64 +135,28 @@ class MazeView:
 
             window.blit(backpack, (100, (len(self.maze.content*50) + 13)))
 
-            #Adds red squares depending on how many keys are collected in pygame
+            #Adds keys to appear in the backpack depending on how many keys are collected in pygame
             if len(self.maze.player.backpack) == 1:
 
-                    rectangle_surface = pygame.Surface((24, 24))
-                    rect_shape = pygame.draw.rect(rectangle_surface, (250, 0, 0), (0, 0, (jdx * 24),  (idx * 24)))
-                    rectangle_surface.set_colorkey((0, 255, 255))
-                    window.blit(rectangle_surface.convert(), ((200, (len(self.maze.content*50) + 13))))
+                window.blit(key.image, ((190, (len(self.maze.content*50) + 8))))
 
             if len(self.maze.player.backpack) == 2:
 
-                rectangle_surface = pygame.Surface((24, 24))
-                rect_shape = pygame.draw.rect(rectangle_surface, (250, 0, 0), (0, 0, (jdx * 24),  (idx * 24)))
-                rectangle_surface.set_colorkey((0, 255, 255))
-                window.blit(rectangle_surface.convert(), ((200, (len(self.maze.content*50) + 13))))
-
-                rectangle_surface = pygame.Surface((24, 24))
-                rect_shape = pygame.draw.rect(rectangle_surface, (250, 0, 0), (0, 0, (jdx * 24),  (idx * 24)))
-                rectangle_surface.set_colorkey((0, 255, 255))
-                window.blit(rectangle_surface.convert(), ((230, (len(self.maze.content*50) + 13))))
+                window.blit(key.image, ((190, (len(self.maze.content*50) + 8))))
+                window.blit(key.image, ((220, (len(self.maze.content*50) + 8))))
 
             if len(self.maze.player.backpack) == 3:
 
-                rectangle_surface = pygame.Surface((24, 24))
-                rect_shape = pygame.draw.rect(rectangle_surface, (250, 0, 0), (0, 0, (jdx * 24),  (idx * 24)))
-                rectangle_surface.set_colorkey((0, 255, 255))
-                window.blit(rectangle_surface.convert(), ((200, (len(self.maze.content*50) + 13))))
-
-                rectangle_surface = pygame.Surface((24, 24))
-                rect_shape = pygame.draw.rect(rectangle_surface, (250, 0, 0), (0, 0, (jdx * 24),  (idx * 24)))
-                rectangle_surface.set_colorkey((0, 255, 255))
-                window.blit(rectangle_surface.convert(), ((230, (len(self.maze.content*50) + 13))))
-
-                rectangle_surface = pygame.Surface((24, 24))
-                rect_shape = pygame.draw.rect(rectangle_surface, (250, 0, 0), (0, 0, (jdx * 24),  (idx * 24)))
-                rectangle_surface.set_colorkey((0, 255, 255))
-                window.blit(rectangle_surface.convert(), ((260, (len(self.maze.content*50) + 13))))
+                window.blit(key.image, ((190, (len(self.maze.content*50) + 8))))
+                window.blit(key.image, ((220, (len(self.maze.content*50) + 8))))
+                window.blit(key.image, ((250, (len(self.maze.content*50) + 8))))
 
             if len(self.maze.player.backpack) == 4:
 
-                rectangle_surface = pygame.Surface((24, 24))
-                rect_shape = pygame.draw.rect(rectangle_surface, (250, 0, 0), (0, 0, (jdx * 24),  (idx * 24)))
-                rectangle_surface.set_colorkey((0, 255, 255))
-                window.blit(rectangle_surface.convert(), ((200, (len(self.maze.content*50) + 13))))
-
-                rectangle_surface = pygame.Surface((24, 24))
-                rect_shape = pygame.draw.rect(rectangle_surface, (250, 0, 0), (0, 0, (jdx * 24),  (idx * 24)))
-                rectangle_surface.set_colorkey((0, 255, 255))
-                window.blit(rectangle_surface.convert(), ((230, (len(self.maze.content*50) + 13))))
-
-                rectangle_surface = pygame.Surface((24, 24))
-                rect_shape = pygame.draw.rect(rectangle_surface, (250, 0, 0), (0, 0, (jdx * 24),  (idx * 24)))
-                rectangle_surface.set_colorkey((0, 255, 255))
-                window.blit(rectangle_surface.convert(), ((260, (len(self.maze.content*50) + 13))))
-
-                rectangle_surface = pygame.Surface((24, 24))
-                rect_shape = pygame.draw.rect(rectangle_surface, (250, 0, 0), (0, 0, (jdx * 24),  (idx * 24)))
-                rectangle_surface.set_colorkey((0, 255, 255))
-                window.blit(rectangle_surface.convert(), ((290, (len(self.maze.content*50) + 13))))
+                window.blit(key.image, ((190, (len(self.maze.content*50) + 8))))
+                window.blit(key.image, ((220, (len(self.maze.content*50) + 8))))
+                window.blit(key.image, ((250, (len(self.maze.content*50) + 8))))
+                window.blit(key.image, ((280, (len(self.maze.content*50) + 8))))
 
             pygame.display.update()
 
