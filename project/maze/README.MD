@@ -7,66 +7,65 @@ This game is implemented in OOP using Pygame and a MVC model.
 
 # Project Structure:
  ```
-project
- ┣ assignment_demo
- ┃ ┣ controllers
- ┃ ┃ ┣ game_move.py
- ┃ ┃ ┣ game_start.py
- ┃ ┃ ┗ __init__.py
+OOB_Project
+ ┣ project
  ┃ ┣ documentation
- ┃ ┃ ┗ uml.pdf
- ┃ ┣ models
- ┃ ┃ ┣ maze.py
- ┃ ┃ ┣ player.py
- ┃ ┃ ┣ score.py
- ┃ ┃ ┣ score_manager.py
- ┃ ┃ ┗ __init__.py
- ┃ ┣ sprites
- ┃ ┃ ┣ door.png
- ┃ ┃ ┣ key.png
- ┃ ┃ ┗ player.png
- ┃ ┣ tests
+ ┃ ┃ ┗ Report.pdf
+ ┃ ┣ maze
  ┃ ┃ ┣ controllers
+ ┃ ┃ ┃ ┣ game_move.py
+ ┃ ┃ ┃ ┣ game_start.py
  ┃ ┃ ┃ ┗ __init__.py
- ┃ ┃ ┣ test_models
- ┃ ┃ ┃ ┣ maze.txt
- ┃ ┃ ┃ ┣ test_maze.py
- ┃ ┃ ┃ ┣ test_player.py
- ┃ ┃ ┃ ┣ test_score.py
- ┃ ┃ ┃ ┣ test_score_manager.py
+ ┃ ┃ ┣ documentation
+ ┃ ┃ ┃ ┗ uml.pdf
+ ┃ ┃ ┣ models
+ ┃ ┃ ┃ ┣ maze.py
+ ┃ ┃ ┃ ┣ player.py
+ ┃ ┃ ┃ ┣ score.py
+ ┃ ┃ ┃ ┣ score_manager.py
+ ┃ ┃ ┃ ┗ __init__.py
+ ┃ ┃ ┣ sprites
+ ┃ ┃ ┃ ┣ door.png
+ ┃ ┃ ┃ ┣ key.png
+ ┃ ┃ ┃ ┣ player.png
+ ┃ ┃ ┃ ┣ wall.png
+ ┃ ┃ ┃ ┗ __init__.py
+ ┃ ┃ ┣ tests
+ ┃ ┃ ┃ ┣ controllers
+ ┃ ┃ ┃ ┃ ┣ maze.txt
+ ┃ ┃ ┃ ┃ ┣ test_game_move.py
+ ┃ ┃ ┃ ┃ ┣ test_game_start.py
+ ┃ ┃ ┃ ┃ ┗ __init__.py
+ ┃ ┃ ┃ ┣ models
+ ┃ ┃ ┃ ┃ ┣ maze.txt
+ ┃ ┃ ┃ ┃ ┣ test_maze.py
+ ┃ ┃ ┃ ┃ ┣ test_player.py
+ ┃ ┃ ┃ ┃ ┣ test_score.py
+ ┃ ┃ ┃ ┃ ┣ test_score_manager.py
+ ┃ ┃ ┃ ┃ ┗ __init__.py
+ ┃ ┃ ┃ ┣ views
+ ┃ ┃ ┃ ┃ ┣ test_maze_view.py
+ ┃ ┃ ┃ ┃ ┗ __init__.py
  ┃ ┃ ┃ ┗ __init__.py
  ┃ ┃ ┣ views
+ ┃ ┃ ┃ ┣ maze_view.py
  ┃ ┃ ┃ ┗ __init__.py
- ┃ ┃ ┣ test_maze.py
- ┃ ┃ ┣ test_player.py
- ┃ ┃ ┣ test_score.py
- ┃ ┃ ┣ test_score_manager.py
+ ┃ ┃ ┣ main.py
+ ┃ ┃ ┣ maze.txt
+ ┃ ┃ ┣ README.MD
  ┃ ┃ ┗ __init__.py
- ┃ ┣ views
- ┃ ┃ ┣ maze_view.py
+ ┃ ┣ web
+ ┃ ┃ ┣ models
+ ┃ ┃ ┃ ┣ score.py
+ ┃ ┃ ┃ ┗ score_manager.py
+ ┃ ┃ ┣ templates
+ ┃ ┃ ┃ ┣ base.html
+ ┃ ┃ ┃ ┗ list.html
+ ┃ ┃ ┣ app.py
+ ┃ ┃ ┣ test_app.py
  ┃ ┃ ┗ __init__.py
- ┃ ┣ main.py
- ┃ ┣ maze.txt
- ┃ ┣ README.MD
- ┃ ┣ test_maze.py
- ┃ ┣ test_player.py
- ┃ ┣ test_score.py
- ┃ ┣ test_score_manager.py
+ ┃ ┣ scores.json
  ┃ ┗ __init__.py
- ┣ web
- ┃ ┣ models
- ┃ ┃ ┣ database_manager.py
- ┃ ┃ ┣ score.py
- ┃ ┃ ┗ score_manager.py
- ┃ ┣ templates
- ┃ ┃ ┣ base.html
- ┃ ┃ ┗ list.html
- ┃ ┣ client.py
- ┃ ┣ flask_app.py
- ┃ ┣ test_flask_app.py
- ┃ ┗ __init__.py
- ┣ scores.json
- ┗ __init__.py
  ```
  # How to test the Code:
  Python and Pytest(pip install pytest in the terminal) are required to test the code
