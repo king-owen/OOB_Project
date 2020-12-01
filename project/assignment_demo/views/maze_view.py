@@ -91,14 +91,6 @@ class MazeView:
         # :param jvalueinenumerate: One of the folowing strings "key, X,  , E"
         # :type jvalueinenumerate: string
         # """
-                for jdx, jvalue in enumerate(value):
-        # """loops through the inner list of the nested lists for the maze
-
-        # :param valueinenumerate: an inner list
-        # :type valueinenumerate: list
-        # :param jvalueinenumerate: One of the folowing strings "key, X,  , E"
-        # :type jvalueinenumerate: string
-        # """
                     if jvalue == "X":
         # """Checks if a spot is an X and creates a black square to represent a wall for it in pygame
         # """
