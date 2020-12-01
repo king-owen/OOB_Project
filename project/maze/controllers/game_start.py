@@ -1,7 +1,7 @@
 from project.maze.models.maze import Maze
 from project.maze.models.player import Player
 from .game_move import GameMove
-from views.maze_view import MazeView
+from project.maze.views.maze_view import MazeView
 import datetime
 
 class GameStart:
