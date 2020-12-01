@@ -1,5 +1,5 @@
-from models.maze import Maze
-from models.player import Player
+from project.maze.models.maze import Maze
+from project.maze.models.player import Player
 from .game_move import GameMove
 from views.maze_view import MazeView
 import datetime

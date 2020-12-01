@@ -1,7 +1,6 @@
-from controllers.game_move import GameMove
+from project.maze.controllers.game_move import GameMove
 import pygame
 import pygame.locals
-import sprites
 import datetime
 class Wall(pygame.sprite.Sprite):
     """ This is the wall sprite """
