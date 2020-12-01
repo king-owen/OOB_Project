@@ -1,6 +1,6 @@
 import pytest
-from .models.score_manager import ScoreManager
-from .models.score import Score
+from project.assignment_demo.models.score_manager import ScoreManager
+from project.assignment_demo.models.score import Score
 
 @pytest.fixture
 def high():
