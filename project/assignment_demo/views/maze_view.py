@@ -3,6 +3,34 @@ import pygame
 import pygame.locals
 import sprites
 import datetime
+class Wall(pygame.sprite.Sprite):
+    """ This is the wall sprite """
+    def __init__(self):
+        image = pygame.image.load('Sprites/wall.png')
+        self.image = pygame.transform.scale(image, (50, 50))
+        self.rect = self.image.get_rect()
+
+
+class Play(pygame.sprite.Sprite):
+    """ This is the wall sprite """
+    def __init__(self):
+        image = pygame.image.load('Sprites/player.png')
+        self.image = pygame.transform.scale(image, (50, 50))
+        self.rect = self.image.get_rect()
+
+class Key(pygame.sprite.Sprite):
+    """ This is the item sprite """
+    def __init__(self):
+        image = pygame.image.load('Sprites/key.png')
+        self.image = pygame.transform.scale(image, (50, 50))
+        self.rect = self.image.get_rect()
+
+class Exit(pygame.sprite.Sprite):
+    """ This is the wall sprite """
+    def __init__(self):
+        image = pygame.image.load('Sprites/door.png')
+        self.image = pygame.transform.scale(image, (50, 50))
+        self.rect = self.image.get_rect()
 
 def create_text_surface(text):
     arial = pygame.font.SysFont('arial', 24)
@@ -37,6 +65,10 @@ class MazeView:
         running = True
 
         while running:
+            player = Play()
+            key = Key()
+            exit = Exit()
+            wall = Wall()
         # """A loop that updates the maze with new information after moving and loops movement
         # """
             clock.tick(60)
@@ -62,34 +94,37 @@ class MazeView:
                     if jvalue == "X":
         # """Checks if a spot is an X and creates a black square to represent a wall for it in pygame
         # """
-                        rectangle_surface = pygame.Surface((50, 50))
-                        rect_shape = pygame.draw.rect(rectangle_surface, (0, 0, 0), (0, 0, (jdx * 50),  (idx * 50)))
-                        rectangle_surface.set_colorkey((255, 255, 255))
-                        window.blit(rectangle_surface.convert(), ((jdx * 50), (idx * 50)))
+        #                 rectangle_surface = pygame.Surface((50, 50))
+        #                 rect_shape = pygame.draw.rect(rectangle_surface, (0, 0, 0), (0, 0, (jdx * 50),  (idx * 50)))
+        #                 rectangle_surface.set_colorkey((255, 255, 255))
+                        window.blit(wall.image, ((jdx * 50), (idx * 50)))
                 
                     if jvalue == "P":
         # """Checks if a spot is the player or P and creates a blue square to represent it in pygame
         # """
-                        rectangle_surface = pygame.Surface((50, 50))
-                        rect_shape = pygame.draw.rect(rectangle_surface, (0, 0, 255), (0, 0, (jdx * 50),  (idx * 50)))
-                        rectangle_surface.set_colorkey((255, 255, 0))
-                        window.blit(rectangle_surface.convert(), ((jdx * 50), (idx * 50)))
+
+        #                 rectangle_surface = pygame.Surface((50, 50))
+        #                 rect_shape = pygame.draw.rect(rectangle_surface, (0, 0, 255), (0, 0, (jdx * 50),  (idx * 50)))
+        #                 rectangle_surface.set_colorkey((255, 255, 0))
+
+                        window.blit(player.image, ((jdx * 50), (idx * 50)))
                 
                     if jvalue == "E":
         # """Checks if a spot is the exit or E and creates a green square to represent it in pygame
         # """
-                        rectangle_surface = pygame.Surface((50, 50))
-                        rect_shape = pygame.draw.rect(rectangle_surface, (0, 255, 0), (0, 0, (jdx * 50),  (idx * 50)))
-                        rectangle_surface.set_colorkey((255, 0, 255))
-                        window.blit(rectangle_surface.convert(), ((jdx * 50), (idx * 50)))
+        #                 rectangle_surface = pygame.Surface((50, 50))
+        #                 rect_shape = pygame.draw.rect(rectangle_surface, (0, 255, 0), (0, 0, (jdx * 50),  (idx * 50)))
+        #                 rectangle_surface.set_colorkey((255, 0, 255))
+                        window.blit(exit.image, ((jdx * 50), (idx * 50)))
                 
                     if jvalue == "key":
         # """Checks if a spot is a key and creates a red square to represent it in pygame
         # """
-                        rectangle_surface = pygame.Surface((50, 50))
-                        rect_shape = pygame.draw.rect(rectangle_surface, (255, 0, 0), (0, 0, (jdx * 50),  (idx * 50)))
-                        rectangle_surface.set_colorkey((0, 255, 255))
-                        window.blit(rectangle_surface.convert(), ((jdx * 50), (idx * 50)))
+        #                 rectangle_surface = pygame.Surface((50, 50))
+        #                 rect_shape = pygame.draw.rect(rectangle_surface, (255, 0, 0), (0, 0, (jdx * 50),  (idx * 50)))
+        #                 rectangle_surface.set_colorkey((0, 255, 255))
+                        window.blit(key.image, ((jdx * 50), (idx * 50)))
+
 
             self.timer = 100 - (pygame.time.get_ticks() // 600)
             show_fps = create_text_surface(str(self.timer))
