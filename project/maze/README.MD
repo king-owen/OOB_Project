@@ -69,6 +69,11 @@ project
  ┗ __init__.py
  ```
  # How to test the Code:
+ Python and Pytest(pip install pytest in the terminal) are required to test the code
+ 1. Open Command Prompt/Terminal
+ 2. Change directory to the downloaded folder
+ 3. Change directory to the test folder
+ 4. Type Pytest *filename* to test the file.
  
  # How to run the Code:
   - [Python](https://www.python.org/) and Pygame(pip install pygame in the terminal) and a Virtual Enviroment is required to run this code.
