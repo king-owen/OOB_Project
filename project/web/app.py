@@ -50,6 +50,7 @@ def delete_score():
 
 @app.route('/')
 def list_all_scores_html():
+    #Displays the scores in order from highest to lower in an html webpage
     scores = score_manager.get_scores()
     sorted_scores = []
     for count, item in enumerate(scores):

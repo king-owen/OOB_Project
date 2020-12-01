@@ -24,33 +24,6 @@ class Score:
         self._date = _date
 
     @property
-    def change_name(self, name):
-        """Changes the player name
-
-        :param name: new name
-        :type name: string
-        """
-        self._player_name = name
-
-    @property
-    def change_score(self, score):
-        """Changes the player score
-
-        :param score: new score
-        :type score: int
-        """
-        self._score = score
-
-    @property
-    def change_date(self, date):
-        """Changes the date
-
-        :param date: new date
-        :type date: string
-        """
-        self._date = date
-
-    @property
     def name(self):
         """Returns name
 
@@ -76,6 +49,33 @@ class Score:
         :rtype: string
         """
         return self._date
+
+    @name.setter
+    def name(self, name):
+        """Changes the player name
+
+        :param name: new name
+        :type name: string
+        """
+        self._player_name = name
+
+    @score.setter
+    def set_score(self, score):
+        """Changes the player score
+
+        :param score: new score
+        :type score: int
+        """
+        self._score = score
+
+    @date.setter
+    def set_date(self, date):
+        """Changes the date
+
+        :param date: new date
+        :type date: string
+        """
+        self._date = date
 
     def to_dict(self):
         """Changes a score object into a dictionary

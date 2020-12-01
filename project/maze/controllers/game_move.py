@@ -13,6 +13,12 @@ class GameMove:
 
         :param maze: A nested list of letters
         :type maze: nested list
+        :param name: Name of a player
+        :type name: string
+        :param start_time: The time the game started
+        :type start_time: string
+        :param timer: An int counting down from 100 to 0
+        :type timer: int
         """
         self.maze = maze
         self.name = name
@@ -105,8 +111,9 @@ class GameMove:
         # """If the spot is the exit then says exit is reached and quits
         # """
                     running = False
-                    # print("Exit Reached")
                     pygame.quit()
+
+                    #calculates the score and exports it
                     end_time = datetime.datetime.now()
                     if (end_time.minute == 0) and (self.start_time.minute != 0):
                         self.end_time = (60 * 60) + end_time.second
@@ -132,6 +139,7 @@ class GameMove:
                     quit()
 
             if self.timer == 0:
+                #quits out of the game if the timer reaches zero and doesn't send the score to the database
                 pygame.quit()
                 print("\nYou lose, try again to add your score!\n")
                 quit()

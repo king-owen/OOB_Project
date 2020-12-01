@@ -12,7 +12,7 @@ class Wall(pygame.sprite.Sprite):
 
 
 class Play(pygame.sprite.Sprite):
-    """ This is the wall sprite """
+    """ This is the player sprite """
     def __init__(self):
         image = pygame.image.load('Sprites/player.png')
         self.image = pygame.transform.scale(image, (50, 50))
@@ -26,7 +26,7 @@ class Key(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
 
 class Exit(pygame.sprite.Sprite):
-    """ This is the wall sprite """
+    """ This is the exit sprite """
     def __init__(self):
         image = pygame.image.load('Sprites/door.png')
         self.image = pygame.transform.scale(image, (50, 50))
@@ -125,7 +125,7 @@ class MazeView:
         #                 rectangle_surface.set_colorkey((0, 255, 255))
                         window.blit(key.image, ((jdx * 50), (idx * 50)))
 
-
+            #Creates a timer and backpack in pygame
             self.timer = 100 - (pygame.time.get_ticks() // 600)
             show_fps = create_text_surface(str(self.timer))
             timer = create_text_surface("Timer:")
@@ -134,6 +134,8 @@ class MazeView:
             window.blit(show_fps, (62, (len(self.maze.content*50) + 13)))
 
             window.blit(backpack, (100, (len(self.maze.content*50) + 13)))
+
+            #Adds red squares depending on how many keys are collected in pygame
             if len(self.maze.player.backpack) == 1:
 
                     rectangle_surface = pygame.Surface((24, 24))
@@ -196,10 +198,3 @@ class MazeView:
 
             moving = GameMove(self.maze, self.start_time, self.name, self.timer)
             moving.move()
-
-        #     for event in pygame.event.get():
-        # # """Checks if the X button is clicked in pygame and closes the game if it is
-        # # """
-        #         if event.type == pygame.QUIT:
-        #             pygame.quit()
-        #             quit()

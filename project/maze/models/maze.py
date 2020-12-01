@@ -94,8 +94,6 @@ class Maze:
         """
         if self.content[line][column] == "key":
             self.player.appendItem("key")
-            # print("Picked up Item")
-            # print(self.player.backpack)
 
             self.content[line][column] = " "
             return True

@@ -13,6 +13,8 @@ class GameStart:
 
         :param maze: An instance of the Maze class
         :type maze: class
+        :param name: Name of a player
+        :type maze: string
         """
         self.maze = Maze(maze)
         self.name = name
