@@ -37,7 +37,11 @@ def test_find_random_spot(test_maze):
     """Checks to see if Maze has a find_random_spot attribute and that it can find an empty random spot and verify"""
     assert hasattr(test_maze,'find_random_spot')
     plot = test_maze.find_random_spot()
-    test_maze.can_move_to(plot[0],plot[1]) == True
+    x = 0
+    while x < 100:
+        assert test_maze.can_move_to(plot[0],plot[1])
+        x+=1
+
 
 def test_exit(test_maze):
     """Checks to see if Maze has a is_exit attribute and verfiy if the exit is True """
