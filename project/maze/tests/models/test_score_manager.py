@@ -1,6 +1,6 @@
 import pytest
-from .models.score_manager import ScoreManager
-from .models.score import Score
+from project.maze.models.score_manager import ScoreManager
+from project.maze.models.score import Score
 
 @pytest.fixture
 def high():

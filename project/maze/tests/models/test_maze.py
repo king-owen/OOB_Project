@@ -1,6 +1,6 @@
 import pytest
-from models.maze import Maze
-from models.player import Player
+from project.maze.models.maze import Maze
+from project.maze.models.player import Player
 """"""
 @pytest.fixture
 def test_maze():
