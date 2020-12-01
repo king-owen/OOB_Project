@@ -1,5 +1,5 @@
 import pytest
-from models.score import Score
+from  project.assignment_demo.models.score import Score
 
 
 @pytest.fixture
