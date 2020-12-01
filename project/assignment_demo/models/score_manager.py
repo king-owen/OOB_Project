@@ -87,27 +87,3 @@ class ScoreManager:
                 for item in data.get("scores"):
                     new_score = Score(item.get("name"), item.get("score"), item.get("date"))
                     self.add_score(new_score)
-
-if __name__ == "__main__":
-
-    manager = ScoreManager()
-
-    manager.from_json("scoresm.json")
-
-    manager.scores
-
-    # score1 = Score("dave", 100)
-
-    # score2 = Score("maya", 10)
-
-    # score3 = Score("sam", 0)
-
-    # manager.add_score(score1)
-
-    # manager.add_score(score2)
-
-    # manager.add_score(score3)
-
-    # print(manager.get_scores())
-
-    # manager.to_json("scoresm.json")

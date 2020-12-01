@@ -39,23 +39,3 @@ class Score:
         score_dict["score"] = self.score
         score_dict["date"] = self.date
         return score_dict
-
-# score = Score()
-
-# print(score.date)
-
-# print(score.to_dict())
-
-# score.to_json()
-
-# test_dic = score.to_dict()
-
-# print(test_dic)
-
-# score2 = Score("tom", 100, "never")
-
-# print(score2.to_dict())
-
-# score2.from_dict(test_dic)
-
-# print(score2.to_dict())
