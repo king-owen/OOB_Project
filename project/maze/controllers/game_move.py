@@ -1,8 +1,8 @@
 import pygame
 import pygame.locals
 import datetime
-from project.maze.models.score import Score
-from project.maze.models.score_manager import ScoreManager
+from models.score import Score
+from models.score_manager import ScoreManager
 
 class GameMove:
     """Allows a player to move

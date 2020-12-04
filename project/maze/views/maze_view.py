@@ -1,4 +1,4 @@
-from project.maze.controllers.game_move import GameMove
+from controllers.game_move import GameMove
 import pygame
 import pygame.locals
 import datetime
